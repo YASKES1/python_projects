@@ -1,0 +1,14 @@
+[
+    {
+        "index": 1,
+        "symbol": "H",
+        "name": "Hydrogen",
+        "mass": 1.008,
+        "state": "gas",
+        "category": "s",
+        "discovery_country": "Henry Cavendish",
+        "discovery_year": 1766,
+        "discoverer": "Henry Cavendish",
+        "atomic_radius": 25.0,
+        "electronegativity": 2.2,
+        "electronic_configuration": 

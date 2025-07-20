@@ -15,47 +15,39 @@ def visualize_atom_with_labels(identifier):
     fig, ax = plt.subplots()
     ax.set_aspect('equal')
 
-    # Ядро (протоны и нейтроны)
-    core_radius = 0.5  # Радиус ядра (уменьшен для компактности)
+    core_radius = 0.5  
 
-    # Рисуем протоны (красные) и добавляем символ 'p'
     for i in range(total_protons):
         angle = 2 * np.pi * i / total_protons
         x = core_radius * np.cos(angle)
         y = core_radius * np.sin(angle)
         ax.plot(x, y, 'ro', markersize=10)
-        ax.text(x, y, 'p', color='white', fontsize=8, ha='center',
-                va='center')  # Обозначение протона
+        ax.text(x, y, 'p', color='white', fontsize=8, ha='center',va='center')  
 
-    # Рисуем нейтроны (желтые) и добавляем символ 'n'
     for i in range(total_neutrons):
-        angle = 2 * np.pi * i / total_neutrons + np.pi / total_neutrons  # Сдвиг для лучшего распределения
-        x = core_radius * 0.8 * np.cos(
-            angle)  # Уменьшаем радиус для плотности
+        angle = 2 * np.pi * i / total_neutrons + np.pi / total_neutrons  
+        x = core_radius * 0.8 * np.cos(angle)  
         y = core_radius * 0.8 * np.sin(angle)
         ax.plot(x, y, 'yo', markersize=10)
-        ax.text(x, y, 'n', color='black', fontsize=8, ha='center',
-                va='center')  # Обозначение нейтрона
+        ax.text(x, y, 'n', color='black', fontsize=8, ha='center',va='center') 
 
-    # Электроны и орбиты
-    orbit_spacing = 2  # Расстояние между орбитами
+    orbit_spacing = 2  
     for level, num_electrons in enumerate(electron_config):
         orbit_radius = (level + 1) * orbit_spacing
-        # Рисуем орбиту (окружность)
         orbit = plt.Circle((0, 0), orbit_radius, color='b', fill=False,
                            linestyle='--')
         ax.add_artist(orbit)
 
-        # Рисуем электроны (синие) и добавляем символ 'e'
+
         for i in range(num_electrons):
             angle = 2 * np.pi * i / num_electrons
             x = orbit_radius * np.cos(angle)
             y = orbit_radius * np.sin(angle)
             ax.plot(x, y, 'bo', markersize=8)
             ax.text(x, y, 'e', color='white', fontsize=8, ha='center',
-                    va='center')  # Обозначение электрона
+                    va='center') 
 
-    # Настройки графика
+
     ax.set_xlim(-orbit_spacing * (len(electron_config) + 1),
                 orbit_spacing * (len(electron_config) + 1))
     ax.set_ylim(-orbit_spacing * (len(electron_config) + 1),
@@ -63,13 +55,13 @@ def visualize_atom_with_labels(identifier):
     ax.set_title(
         f'{atom.element_name} (Z = {atom.atomic_number}), Mass: {atom.atomic_mass} u')
 
-    # Легенда (можно удалить, если не нужна)
+
     # ax.legend(loc='upper right')
 
     plt.show()
 
 
-# Пример: визуализация атома по символу или номеру элемента
+# визуализация атома по символу или номеру элемента
 # visualize_atom_with_labels('He')  # По символу элемента
 visualize_atom_with_labels(32)  # По номеру элемента
 

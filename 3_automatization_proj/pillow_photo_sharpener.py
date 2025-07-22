@@ -1,6 +1,6 @@
 from PIL import Image, ImageEnhance, ImageFilter
 import os
-
+#increases image quality
 
 path="./imgs"
 pathout="./editedimgs"

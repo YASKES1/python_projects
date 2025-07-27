@@ -15,7 +15,7 @@ st.markdown("Upload your resume and get AI-powered feedback")
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-uploaded_file = st.file_uploader("Upload your resume (PDF OR TXT", type=["pdf", "txt"])
+uploaded_file = st.file_uploader("Upload your resume (PDF OR TXT)", type=["pdf", "txt"])
 job_role = st.text_input("Enter the job you are targetting (optional")
 
 analyze = st.button("Analyze Resume")

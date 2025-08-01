@@ -121,3 +121,5 @@ def smooth_curve(points, factor=0.9):
             epochs=80, batch_size=16, verbose=0)
   test_mse_score, test_mae_score = model.evaluate(test_data, test_targets)
   print("test_mae_score:", test_mae_score)
+
+

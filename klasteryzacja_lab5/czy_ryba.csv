@@ -1,0 +1,10 @@
+nazwa,ma_nogi,ma_płetwy,czym_oddycha,ryba
+Rak,True,True,skrzela,False
+Karp,False,True,skrzela,True
+Buldog,True,False,płuca,False
+Delfin,False,True,płuca,False
+Orka,False,True,płuca,False
+Sum,False,True,skrzela,True
+Rekin,False,True,skrzela,True
+Dżdżownica,False,False,całe ciało,False
+Żmija,False,False,płuca,False
